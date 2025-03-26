@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+
+<div class = "container">
+    <div class  = "sidebar"> </div>
+    <div class = "main"> 
+    <button id = "createproject"> Create Project </button>    
+    </div>
+</div>
+
+<dialog id="taskDialog"> 
+    <form action="/submit-task" method="post">
+      <p>
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="task_title" />
+      </p>
+  
+      <p>
+        <label for="description">Description:</label>
+        <textarea id="description" name="task_description"></textarea>
+      </p>
+  
+      <p>
+        <label for="dueDate">Due Date:</label>
+        <input type="date" id="dueDate" name="task_dueDate" />
+      </p>
+  
+      <p>
+        <label for="priority">Priority:</label>
+        <select id="priority" name="task_priority">
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
+        </select>
+      </p>
+  
+      <p>
+        <label for="notes">Notes:</label>
+        <textarea id="notes" name="task_notes"></textarea>
+      </p>
+  
+      <p>
+        <label for="checklist">Checklist (comma separated):</label>
+        <input type="text" id="checklist" name="task_checklist" placeholder="e.g. item1, item2, item3" />
+      </p>
+  
+      <button type="submit">Submit</button>
+      <button type="button" onclick="document.getElementById('taskDialog').close()">Cancel</button>
+    </form>
+  </dialog>
+
+</body>
+
+</html>

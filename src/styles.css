@@ -1,0 +1,24 @@
+/* styles.css */
+body {
+    background-color: rgb(246, 236, 255);
+  }
+  
+.container {
+    display: grid;
+    grid-template-columns: 0.7fr 2fr;
+    grid-template-rows: auto;
+    height: 100vh; /* Optional: full height of the screen */
+  }
+
+.sidebar {
+  display: grid;
+  background-color: aquamarine;
+  grid-column: 1;
+
+}
+
+.main {
+  display: grid;
+  background-color: rgb(224, 224, 224);
+  grid-column: 2;
+}
