@@ -11,9 +11,24 @@
 <div class = "container">
     <div class  = "sidebar"> </div>
     <div class = "main"> 
-    <button id = "createproject"> Create Project </button>    
+        <button id = "createProject"> Create Project </button>  
+        <div class = "project"> 
+            <button id = "createTask"> Create Task </button>
+        </div>
     </div>
 </div>
+
+
+<dialog id="projectDialog">
+    <form action="/submit-project" method="post">
+        <p>
+          <label for="title"> Project Name: </label>
+          <input type="text" id="title" name="task_title" />
+        </p>
+        <button type="submit">Submit</button>
+        <button type="button" class="cancel-btn" data-dialog="projectDialog">Cancel</button>
+</dialog>
+
 
 <dialog id="taskDialog"> 
     <form action="/submit-task" method="post">
@@ -52,7 +67,7 @@
       </p>
   
       <button type="submit">Submit</button>
-      <button type="button" onclick="document.getElementById('taskDialog').close()">Cancel</button>
+      <button type="button" class="cancel-btn" data-dialog="taskDialog">Cancel</button>
     </form>
   </dialog>
 

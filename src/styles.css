@@ -22,3 +22,8 @@ body {
   background-color: rgb(224, 224, 224);
   grid-column: 2;
 }
+
+#createproject {
+  width: 150px;
+  height: 150px;
+}
