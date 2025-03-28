@@ -12,7 +12,10 @@
     <div class  = "sidebar"> </div>
     <div class = "main"> 
         <button id = "createProject"> Create Project </button>  
-        <div class = "project"> 
+        <div class = "projects"> 
+          <div class = "projectsContainer">
+            <div class = "todosContainer"> </div>
+          </div>
             <button id = "createTask"> Create Task </button>
         </div>
     </div>
@@ -22,8 +25,8 @@
 <dialog id="projectDialog">
     <form action="/submit-project" method="post">
         <p>
-          <label for="title"> Project Name: </label>
-          <input type="text" id="title" name="task_title" />
+          <label for="project-title"> Project Name: </label>
+          <input type="text" id="project-title" name="project_title" />
         </p>
         <button type="submit">Submit</button>
         <button type="button" class="cancel-btn" data-dialog="projectDialog">Cancel</button>
@@ -66,7 +69,7 @@
         <input type="text" id="checklist" name="task_checklist" placeholder="e.g. item1, item2, item3" />
       </p>
   
-      <button type="submit">Submit</button>
+      <button class = "submit-task" type="submit">Submit</button>
       <button type="button" class="cancel-btn" data-dialog="taskDialog">Cancel</button>
     </form>
   </dialog>
