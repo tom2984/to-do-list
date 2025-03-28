@@ -8,22 +8,28 @@
 </head>
 <body>
 
-<div class = "container">
-    <div class  = "sidebar"> </div>
-    <div class = "main"> 
-        <button id = "createProject"> Create Project </button>  
-        <div class = "projects"> 
-          <div class = "projectsContainer">
-            <div class = "todosContainer"> </div>
-          </div>
-            <button id = "createTask"> Create Task </button>
-        </div>
+  <div class="container">
+    <div class="sidebar">
+    <button id="backButton" style="display: none;"> ← Back </button>
     </div>
-</div>
+    <div class="main">
+    <div id="projectsUI" style="display: block;">
+      <button id="createProject">Create Project</button>
+      <div id="projectsContainer"></div>
+    </div>
+  
+      <div id="todoUI" style="display: none;">
+        <button id="createTask">Create Task</button>
+        <div id="todosContainer"></div>
+      </div>
+      <div id="tododetailedUI" style="display: none;">
+        <div id="todosDetailedContainer"> </div>
+      </div>
+  </div>
 
 
 <dialog id="projectDialog">
-    <form id = "project-form" action="/submit-project" method="post">
+    <form id = "project-form">
         <p>
           <label for="project-title"> Project Name: </label>
           <input type="text" id="project-title" name="project_title" />
@@ -35,7 +41,7 @@
 
 
 <dialog id="taskDialog"> 
-    <form id = "todo-form" action="/submit-task" method="post">
+    <form id = "todo-form">
       <p>
         <label for="title">Title:</label>
         <input type="text" id="title" name="task_title" />

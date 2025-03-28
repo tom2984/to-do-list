@@ -100,3 +100,31 @@ button[type="button"] {
 button[type="button"]:hover {
   background-color: #cacaca;
 }
+
+#projectsContainer {
+  display: flex;
+  gap: 16px;
+  padding: 20px;
+  height: 100vh;
+}
+
+.project-card {
+  border-radius: 12px;
+  padding: 12px;
+  width: 150px;
+  max-height: 100px;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #ffc7c7;
+  cursor: pointer;
+}
+
+.todo-card{
+  border-radius: 12px;
+  padding: 30px;
+  max-width: 150px;
+  width: 90%;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #808080;
+  cursor: pointer;
+
+}
