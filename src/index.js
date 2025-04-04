@@ -72,6 +72,45 @@ function renderTodos(projectId) {
 
 function renderToDosDetailed(toDoID) {
   clearContent('todosDetailedContainer');
+
+  const todosDetailed = document.getElementById('todosDetailedContainer');
+  const project = savedProjects.find(p => p.id === projectId);
+  if (!project || !project.todos) return;
+
+  project.todos.forEach(todo => {
+    const titleInput = document.createElement('input');
+    titleInput.type = 'text';
+    titleInput.value = todo.title;
+
+    const descriptionInput = document.createElement('textarea');
+    descriptionInput.value = todo.description;
+
+    const dueDateInput = document.createElement('input');
+    dueDateInput.type = 'date';
+    dueDateInput.value = todo.dueDate;
+    
+    const prioritySelect = document.createElement('select');
+   ['low', 'medium', 'high'].forEach(level => {
+    const option = document.createElement('option');
+    option.value = level;
+    option.textContent = level.charAt(0).toUpperCase() + level.slice(1);
+    if (level === todo.priority) option.selected = true;
+    prioritySelect.appendChild(option);
+  });
+
+  const notesInput = document.createElement('textarea');
+  notesInput.value = todo.notes;
+
+  const checklistInput = document.createElement('input');
+  checklistInput.type = 'text';
+  checklistInput.value = todo.checklist; // assuming it's a string (e.g. "item1,item2")
+
+  const saveButton = document.createElement('button');
+  saveButton.textContent = "Save Changes";
+
+  todosDetailed.appendChild(titleInput, descriptionInput, dueDateInput, prioritySelect, notesInput, checklistInput, saveButton)
+
+  })
 }
 
 // === DOM-Ready Setup ===
