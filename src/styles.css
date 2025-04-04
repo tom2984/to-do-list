@@ -22,11 +22,7 @@ body {
   display: grid;
   background-color: rgb(224, 224, 224);
   grid-column: 2;
-}
-
-#createProject, #createTask{
-  width: 150px;
-  height: 50px;
+  padding: 15px
 }
 
 dialog {
@@ -81,6 +77,8 @@ button {
   cursor: pointer;
   font-weight: 600;
   font-size: 14px;
+  width: min-content fit-content, max-content 150px;
+  height: 50px;
   transition: background-color 0.3s ease;
 }
 
@@ -91,7 +89,7 @@ button[type="submit"] {
 
 button[type="back"] {
   height: 50px;
-
+  width: fit-content;
 }
 
 button[type="submit"]:hover {
@@ -107,14 +105,20 @@ button[type="button"]:hover {
   background-color: #cacaca;
 }
 
-#projectsContainer {
+#projectsContainer, #todosContainer {
   display: flex;
   gap: 16px;
   padding: 20px;
   height: 100vh;
 }
 
-.project-card {
+#todosDetailedContainer {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+}
+
+.project-card, .todo-card {
   border-radius: 12px;
   padding: 12px;
   width: 150px;
@@ -122,15 +126,4 @@ button[type="button"]:hover {
   font-family: 'Segoe UI', sans-serif;
   background-color: #ffc7c7;
   cursor: pointer;
-}
-
-.todo-card{
-  border-radius: 12px;
-  padding: 30px;
-  max-width: 150px;
-  width: 90%;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #808080;
-  cursor: pointer;
-
 }
